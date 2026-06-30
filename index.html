@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/src/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tauri App</title>
+</head>
+
+  <body>
+  <label class="developer-toggle" hidden>
+    <input id="developer-debug-toggle" type="checkbox" />
+    Debug replies
+  </label>
+  <div class="corner-circuit corner-circuit-top" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <main class="container">
+    <h1>Lil' Hal</h1>
+
+    <form id="chat-form">
+      <input id="chat-input" placeholder="Hey, it's me." autocomplete="off" />
+      <button type="submit">Send</button>
+    </form>
+
+    <div id="message-log" class="message-log" aria-live="polite"></div>
+    <p id="chat-response"></p>
+    <div id="developer-debug-panel" class="developer-debug-panel" hidden>
+      <div class="developer-debug-block">
+        <div class="developer-debug-label">Automated fallback</div>
+        <p id="developer-fallback-response"></p>
+      </div>
+    </div>
+    <div class="corner-circuit corner-circuit-bottom" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="text-color-controls" aria-label="Typing text color">
+      <button
+        class="color-swatch is-selected"
+        type="button"
+        data-input-color="#ffffff"
+        data-character-type="unspecified"
+        style="--swatch-color: #ffffff"
+        aria-label="Unspecified typing color"
+        title="Unspecified"></button>
+      <button
+        class="color-swatch"
+        type="button"
+        data-input-color="#f2a400"
+        data-character-type="dirk"
+        style="--swatch-color: #f2a400"
+        aria-label="Dirk typing color"
+        title="Dirk"></button>
+      <button
+        class="color-swatch"
+        type="button"
+        data-input-color="#ff6ff2"
+        data-character-type="roxy"
+        style="--swatch-color: #ff6ff2"
+        aria-label="Roxy typing color"
+        title="Roxy"></button>
+      <button
+        class="color-swatch"
+        type="button"
+        data-input-color="#1f9400"
+        data-character-type="jake"
+        style="--swatch-color: #1f9400"
+        aria-label="Jake typing color"
+        title="Jake"></button>
+      <button
+        class="color-swatch"
+        type="button"
+        data-input-color="#323232"
+        data-character-type="caliborn"
+        style="--swatch-color: #323232"
+        aria-label="Caliborn typing color"
+        title="Caliborn"></button>
+      <button
+        class="color-swatch"
+        type="button"
+        data-input-color="#e00707"
+        data-character-type="dave"
+        style="--swatch-color: #e00707"
+        aria-label="Dave typing color"
+        title="Dave"></button>
+    </div>
+    <section class="saved-chats" aria-label="Saved chats">
+      <div class="saved-chats-header">
+        <span>Saved chats</span>
+        <div class="saved-chat-actions">
+          <button id="load-chat-button" type="button">Load</button>
+          <button id="new-chat-button" type="button">Save</button>
+        </div>
+      </div>
+      <div id="saved-chat-list" class="saved-chat-list"></div>
+      <div id="saved-chat-transcript" class="saved-chat-transcript"></div>
+    </section>
+    <section class="memory-notes" aria-label="Memory notes">
+      <div class="memory-notes-header">
+        <span id="memory-notes-title">Memory notes</span>
+        <button id="reset-memory-button" type="button">Reset memory</button>
+      </div>
+      <textarea
+        id="memory-notes-input"
+        spellcheck="false"
+        rows="4"
+        placeholder="Facts Hal should remember."></textarea>
+    </section>
+    <div class="update-controls">
+      <button id="check-update-button" type="button">Check update</button>
+      <span id="update-status" aria-live="polite"></span>
+    </div>
+  </main>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
