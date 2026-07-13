@@ -1,10 +1,15 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="stylesheet" href="/src/styles.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tauri App</title>
+  <meta name="theme-color" content="#070707" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Lil' Hal" />
+  <title>Lil' Hal</title>
 </head>
 
   <body>
@@ -116,7 +121,7 @@
         id="memory-notes-input"
         spellcheck="false"
         rows="4"
-        placeholder="Facts Hal should remember."></textarea>
+        placeholder="Facts I'll remember."></textarea>
     </section>
     <div class="update-controls">
       <button id="check-update-button" type="button">Check update</button>
@@ -127,3 +132,8 @@
   <script type="module" src="/src/main.ts"></script>
 </body>
 </html>
+
+
+
+
+

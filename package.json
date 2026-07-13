@@ -1,12 +1,14 @@
 {
   "name": "lilhal",
   "private": true,
-  "version": "0.1.3",
+  "version": "0.1.6",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "web:dev": "set HAL_WEB=true&& vite",
+    "web:preview": "set HAL_WEB=true&& vite preview --host 0.0.0.0",
     "tauri": "tauri"
   },
   "dependencies": {
@@ -20,4 +22,6 @@
     "vite": "^8.0.16"
   }
 }
+
+
 
