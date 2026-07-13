@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   font-family: "Courier New", Courier, monospace;
   font-weight: 700;
   color: #eeeeee;
@@ -675,5 +675,95 @@ button:hover {
   white-space: pre-line;
 }
 
+/* Mobile layout tuning for Hal web app */
+@media (max-width: 700px) {
+  html,
+  body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+  }
 
+  body {
+    display: block;
+  }
+
+  .container {
+    width: min(100%, 430px);
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 118px 16px 110px;
+    box-sizing: border-box;
+    align-items: center;
+  }
+
+  .hal-shades {
+    width: min(82vw, 350px);
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  h1 {
+    width: 100%;
+    text-align: center;
+    font-size: clamp(3.1rem, 17vw, 4.9rem);
+  }
+
+  #chat-form {
+    width: min(100%, 390px);
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+
+  #chat-input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  #chat-response,
+  #last-message,
+  .last-message,
+  .message-log,
+  .chat-log,
+  .saved-chats,
+  .memory-section,
+  .memory-notes,
+  .color-controls,
+  .save-controls,
+  .update-controls {
+    width: min(100%, 390px);
+    max-width: 390px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .corner-circuit {
+    pointer-events: none;
+  }
+
+  .corner-circuit-top {
+    top: 24px;
+    right: -18px;
+    transform: scale(0.34);
+    transform-origin: top right;
+    z-index: 0;
+  }
+
+  .corner-circuit-bottom {
+    left: -114px;
+    bottom: 22px;
+    transform: scale(0.38);
+    transform-origin: left bottom;
+  }
+}
+/* End mobile layout tuning */
 
