@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   font-family: "Courier New", Courier, monospace;
   font-weight: 700;
   color: #eeeeee;
@@ -680,8 +680,11 @@ button:hover {
   html,
   body {
     width: 100%;
+    max-width: 100%;
     min-width: 0;
+    margin: 0;
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
@@ -689,17 +692,21 @@ button:hover {
   }
 
   .container {
-    width: min(100%, 430px);
-    max-width: 430px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     margin: 0 auto;
-    padding: 118px 16px 110px;
+    padding: 82px 18px 120px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
   }
 
   .hal-shades {
-    width: min(82vw, 350px);
-    max-width: 350px;
+    width: min(70vw, 285px);
+    max-width: 285px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -709,22 +716,37 @@ button:hover {
   h1 {
     width: 100%;
     text-align: center;
-    font-size: clamp(3.1rem, 17vw, 4.9rem);
+    font-size: clamp(2.25rem, 11vw, 3.3rem);
+    line-height: 1;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #chat-form {
-    width: min(100%, 390px);
+    width: 100%;
+    max-width: 360px;
+    min-width: 0;
     margin-left: auto;
     margin-right: auto;
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    gap: 10px;
+    gap: 8px;
     box-sizing: border-box;
   }
 
   #chat-input {
     width: 100%;
     min-width: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+
+  #chat-form button,
+  #send-button {
+    min-width: 72px;
+    padding-left: 16px;
+    padding-right: 16px;
+    white-space: nowrap;
     box-sizing: border-box;
   }
 
@@ -739,8 +761,9 @@ button:hover {
   .color-controls,
   .save-controls,
   .update-controls {
-    width: min(100%, 390px);
-    max-width: 390px;
+    width: 100%;
+    max-width: 360px;
+    min-width: 0;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
@@ -751,19 +774,179 @@ button:hover {
   }
 
   .corner-circuit-top {
-    top: 24px;
-    right: -18px;
-    transform: scale(0.34);
+    top: 28px;
+    right: 6px;
+    transform: scale(0.72);
     transform-origin: top right;
     z-index: 0;
   }
 
   .corner-circuit-bottom {
-    left: -114px;
-    bottom: 22px;
-    transform: scale(0.38);
+    left: -112px;
+    bottom: 34px;
+    transform: scale(0.72);
     transform-origin: left bottom;
   }
 }
 /* End mobile layout tuning */
+/* Mobile web app final override */
+@media (max-width: 700px) {
+  * {
+    box-sizing: border-box;
+  }
 
+  html,
+  body {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    display: block !important;
+    touch-action: pan-y;
+  }
+
+  #app,
+  main,
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .container {
+    min-height: 100svh !important;
+    padding: 44px 16px 120px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 22px !important;
+    position: relative !important;
+  }
+
+  .container > :not(.corner-circuit) {
+    width: min(100%, 350px) !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero,
+  .hero-stack,
+  .hal-header {
+    width: min(350px, 100%) !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    position: relative !important;
+    z-index: 2 !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+  }
+
+  .hal-shades,
+  .shades,
+  .hal-shades-image {
+    width: min(72vw, 275px) !important;
+    max-width: 275px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    font-size: clamp(2rem, 11vw, 3rem) !important;
+    line-height: 1.05 !important;
+    margin: 0 auto !important;
+  }
+
+  form,
+  #chat-form {
+    width: min(350px, 100%) !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 74px !important;
+    gap: 8px !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+  }
+
+  input,
+  #chat-input {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    font-size: 16px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  form button,
+  #chat-form button,
+  #chat-form [type="submit"],
+  #send-button {
+    width: 74px !important;
+    min-width: 74px !important;
+    max-width: 74px !important;
+    padding: 0 6px !important;
+    font-size: 16px !important;
+    white-space: nowrap !important;
+  }
+
+  #chat-response,
+  #last-message,
+  .last-message,
+  .message-log,
+  .chat-log,
+  .saved-chats,
+  .memory-section,
+  .memory-notes,
+  .color-controls,
+  .save-controls,
+  .update-controls {
+    width: min(350px, 100%) !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+  }
+
+  .corner-circuit {
+    pointer-events: none !important;
+    max-width: none !important;
+    z-index: 1 !important;
+  }
+
+  .corner-circuit-top {
+    top: 78px !important;
+    right: -18px !important;
+    transform: scale(3.15) !important;
+    transform-origin: top right !important;
+  }
+
+  .corner-circuit-bottom {
+    left: -76px !important;
+    bottom: 92px !important;
+    transform: scale(3.2) !important;
+    transform-origin: left bottom !important;
+  }
+}
+/* End mobile web app final override */
