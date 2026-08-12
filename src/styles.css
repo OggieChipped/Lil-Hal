@@ -241,9 +241,9 @@ h1::before {
 }
 
 .corner-circuit-bottom::before {
-  left: 0;
+  left: -110px;
   bottom: 40px;
-  width: 230px;
+  width: 340px;
   height: 3px;
 }
 
@@ -306,7 +306,7 @@ h1::before {
 }
 
 .corner-circuit-bottom span:nth-child(8) {
-  left: 0;
+  left: 58px;
   bottom: 24px;
   width: 110px;
   height: 3px;
@@ -676,7 +676,7 @@ button:hover {
 }
 
 /* Mobile layout tuning for Hal web app */
-@media (max-width: 700px) {
+@media (max-width: 700px), (hover: none) {
   html,
   body {
     width: 100%;
@@ -789,8 +789,8 @@ button:hover {
   }
 }
 /* End mobile layout tuning */
-/* Mobile web app final override */
-@media (max-width: 700px) {
+/* Phone layout: keep the interface full-width without scaling the artwork past its space. */
+@media (max-width: 700px), (hover: none) {
   * {
     box-sizing: border-box;
   }
@@ -817,17 +817,18 @@ button:hover {
     max-width: 100% !important;
     min-width: 0 !important;
     margin: 0 auto !important;
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
   }
 
   .container {
     min-height: 100svh !important;
-    padding: 44px 16px 120px !important;
+    padding: 72px 16px 48px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 22px !important;
+    gap: 18px !important;
     position: relative !important;
+    z-index: 1 !important;
   }
 
   .container > :not(.corner-circuit) {
@@ -867,9 +868,19 @@ button:hover {
     width: 100% !important;
     max-width: 100% !important;
     text-align: center !important;
-    font-size: clamp(2rem, 11vw, 3rem) !important;
+    padding: 128px 0 16px !important;
+    font-size: clamp(2.25rem, 11vw, 3rem) !important;
     line-height: 1.05 !important;
     margin: 0 auto !important;
+    transform: none !important;
+  }
+
+  h1::before {
+    width: min(92vw, 360px) !important;
+    height: 148px !important;
+    top: 0 !important;
+    background-size: cover !important;
+    transform: translateX(-50%) !important;
   }
 
   form,
@@ -932,21 +943,42 @@ button:hover {
   .corner-circuit {
     pointer-events: none !important;
     max-width: none !important;
-    z-index: 1 !important;
+    z-index: 0 !important;
+    clip-path: inset(0) !important;
   }
 
   .corner-circuit-top {
-    top: 78px !important;
-    right: -18px !important;
-    transform: scale(3.15) !important;
+    top: -10px !important;
+    right: -50px !important;
+    transform: scale(0.93) !important;
     transform-origin: top right !important;
   }
 
   .corner-circuit-bottom {
-    left: -76px !important;
-    bottom: 92px !important;
-    transform: scale(3.2) !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: 430px !important;
+    height: 160px !important;
+    align-self: flex-start !important;
+    margin: 18px 0 0 -16px !important;
+    transform: scale(0.62) !important;
     transform-origin: left bottom !important;
   }
+
+  .corner-circuit-bottom span:nth-child(3) {
+    left: 82px !important;
+    bottom: 152px !important;
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .text-color-controls {
+    width: max-content !important;
+    max-width: calc(100vw - 32px) !important;
+    align-self: center !important;
+    justify-self: auto !important;
+    margin: 18px auto 0 !important;
+    justify-content: center !important;
+  }
 }
-/* End mobile web app final override */
+/* End phone layout */
