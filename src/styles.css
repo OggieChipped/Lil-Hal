@@ -898,7 +898,9 @@ button:hover {
   }
 
   input,
-  #chat-input {
+  #chat-input,
+  textarea,
+  #memory-notes-input {
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
