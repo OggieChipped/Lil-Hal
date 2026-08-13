@@ -1,4 +1,4 @@
-﻿const DEFAULT_MODEL = "meta-llama/llama-3.2-1b-instruct:free";
+const DEFAULT_MODEL = "openrouter/free";
 
 function getPayload(req) {
   if (req.body?.payload) return req.body.payload;
